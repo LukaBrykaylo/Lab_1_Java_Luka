@@ -10,29 +10,31 @@ import lombok.ToString;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public class SublimationPrinter extends Printer {
-    private static final int REQUIRED_COLOUR_PER_PAGE = 10;
-    private int levelOfCMYK = 60;
+    public static final int REQUIRED_COLOUR_PER_PAGE = 10;
+    private int levelOfCmyk = 60;
     private int temperature = 0;
 
     @Override
     public String print(final int pages) {
-        if (paperCount >= pages && (levelOfCMYK / REQUIRED_COLOUR_PER_PAGE) >= pages) {
+        if (paperCount >= pages && (levelOfCmyk / REQUIRED_COLOUR_PER_PAGE) >= pages) {
             paperCount -= pages;
-            levelOfCMYK -= REQUIRED_COLOUR_PER_PAGE * pages;
+            levelOfCmyk -= REQUIRED_COLOUR_PER_PAGE * pages;
             return "printed";
-        }else{
+        } else {
             return "failed";
         }
+
     }
 
     @Override
     public int getRemainingPagesCount() {
-        if (paperCount > (levelOfCMYK / REQUIRED_COLOUR_PER_PAGE)) {
-            return levelOfCMYK / REQUIRED_COLOUR_PER_PAGE;
+        if (paperCount > (levelOfCmyk / REQUIRED_COLOUR_PER_PAGE)) {
+            return levelOfCmyk / REQUIRED_COLOUR_PER_PAGE;
         } else {
             return paperCount;
         }
     }
 }
+

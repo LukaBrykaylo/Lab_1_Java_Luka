@@ -10,28 +10,28 @@ import lombok.ToString;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public class MatrixPrinter extends Printer {
-    private static final int REQUIRED_COLOUR_PER_PAGE = 10;
+    public static final int REQUIRED_COLOUR_PER_PAGE = 10;
     private int numberOfPins = 9;
     private boolean isSpeed = false;
-    private int levelOfCMYK = 60;
+    private int levelOfCmyk = 60;
 
     @Override
     public String print(int pages) {
-        if (paperCount >= pages && (levelOfCMYK / REQUIRED_COLOUR_PER_PAGE) >= pages) {
+        if (paperCount >= pages && (levelOfCmyk / REQUIRED_COLOUR_PER_PAGE) >= pages) {
             paperCount -= pages;
-            levelOfCMYK -= REQUIRED_COLOUR_PER_PAGE * pages;
+            levelOfCmyk -= REQUIRED_COLOUR_PER_PAGE * pages;
             return "printed";
-        }else{
+        } else {
             return "failed";
         }
     }
 
     @Override
     public int getRemainingPagesCount() {
-        if (paperCount > (levelOfCMYK / REQUIRED_COLOUR_PER_PAGE)) {
-            return levelOfCMYK / REQUIRED_COLOUR_PER_PAGE;
+        if (paperCount > (levelOfCmyk / REQUIRED_COLOUR_PER_PAGE)) {
+            return levelOfCmyk / REQUIRED_COLOUR_PER_PAGE;
         } else {
             return paperCount;
         }

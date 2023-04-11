@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public class PrinterManager {
     private List<Printer> allPrinters = new LinkedList<>();
 

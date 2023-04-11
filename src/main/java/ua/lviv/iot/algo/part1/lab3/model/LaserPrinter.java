@@ -10,9 +10,9 @@ import lombok.ToString;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public class LaserPrinter extends Printer {
-    private static final int REQUIRED_CAPACITY_OF_TONER_PAGE = 10;
+    public static final int REQUIRED_CAPACITY_OF_TONER_PAGE = 10;
     private int capacityOfToner = 150;
     private int printedPages = 0;
 
@@ -30,6 +30,7 @@ public class LaserPrinter extends Printer {
             return "failed";
         }
     }
+
     public void setCapacityOfToner(final int capacityOfToner) {
         this.capacityOfToner = capacityOfToner;
     }

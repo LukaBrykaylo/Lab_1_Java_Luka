@@ -6,12 +6,12 @@ import lombok.Setter;
 @Setter
 @Getter
 public abstract class Printer {
-    private String model = "Modeled";
-    private String type = "Laser";
-    private boolean isColor = true;
-    private boolean isDuplex = false;
-    private int paperTrayCapacity = 100;
-    int paperCount = 0;
+    protected String model = "Modeled";
+    protected String type = "Laser";
+    protected boolean isColor = true;
+    protected boolean isDuplex = false;
+    protected int paperTrayCapacity = 100;
+    protected int paperCount = 0;
 
     public String print(final int pages) {
         if (paperCount >= pages) {
@@ -25,15 +25,15 @@ public abstract class Printer {
 
     public void loadPaper(final int count) {
         if ((paperCount + count) > paperTrayCapacity) {
-            System.out.println("loaded: " +
-                    (paperTrayCapacity - paperCount) + " papers.");
+            System.out.println("loaded: " + (paperTrayCapacity - paperCount) + " papers.");
             paperCount = paperTrayCapacity;
         } else {
             paperCount += count;
         }
     }
 
-    public int getRemainingPagesCount(){
+    public int getRemainingPagesCount() {
         return paperCount;
     }
 }
+

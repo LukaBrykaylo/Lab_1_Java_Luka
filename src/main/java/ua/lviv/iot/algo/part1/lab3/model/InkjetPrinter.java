@@ -10,25 +10,26 @@ import lombok.ToString;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public class InkjetPrinter extends Printer {
-    private static final int REQUIRED_COLOUR_PER_PAGE = 10;
-    private int levelOfCMYK = 100;
-    private boolean isCMYK = true;
+    public static final int REQUIRED_COLOUR_PER_PAGE = 10;
+    private int levelOfCmyk = 100;
+    private boolean isCmyk = true;
+
     @Override
     public int getRemainingPagesCount() {
-        if (isCMYK == false) {
+        if (isCmyk == false) {
             return 0;
         } else {
-            return levelOfCMYK / REQUIRED_COLOUR_PER_PAGE;
+            return levelOfCmyk / REQUIRED_COLOUR_PER_PAGE;
         }
     }
 
     @Override
     public String print(final int pages) {
-        if (paperCount >= pages && (levelOfCMYK / REQUIRED_COLOUR_PER_PAGE) >= pages) {
+        if (paperCount >= pages && (levelOfCmyk / REQUIRED_COLOUR_PER_PAGE) >= pages) {
             paperCount -= pages;
-            levelOfCMYK -= REQUIRED_COLOUR_PER_PAGE * pages;
+            levelOfCmyk -= REQUIRED_COLOUR_PER_PAGE * pages;
             return "printed";
         } else {
             return "failed";
