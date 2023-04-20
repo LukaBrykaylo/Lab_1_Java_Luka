@@ -1,5 +1,6 @@
 package ua.lviv.iot.algo.part1.lab4.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,6 +8,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class MatrixPrinter extends Printer {
@@ -15,13 +17,6 @@ public class MatrixPrinter extends Printer {
     private int numberOfPins = 9;
     private boolean isSpeed = false;
     private int levelOfCmyk = 60;
-
-    public MatrixPrinter(int numberOfPins, boolean isSpeed, int levelOfCmyk) {
-        this.numberOfPins = numberOfPins;
-        this.isSpeed = isSpeed;
-        this.levelOfCmyk = levelOfCmyk;
-        type = "Matrix";
-    }
 
     @Override
     public String print(int pages) {

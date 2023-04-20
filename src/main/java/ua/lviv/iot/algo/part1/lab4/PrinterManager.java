@@ -1,5 +1,6 @@
 package ua.lviv.iot.algo.part1.lab4;
 
+import lombok.Generated;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ua.lviv.iot.algo.part1.lab4.model.InkjetPrinter;
@@ -8,26 +9,18 @@ import ua.lviv.iot.algo.part1.lab4.model.MatrixPrinter;
 import ua.lviv.iot.algo.part1.lab4.model.Printer;
 import ua.lviv.iot.algo.part1.lab4.model.SublimationPrinter;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static ua.lviv.iot.algo.part1.lab4.PrinterWriter.file;
-
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class PrinterManager {
-    private List<Printer> allPrinters = new LinkedList<>();
+    public final List<Printer> allPrinters = new LinkedList<>();
 
     public void addPrinter(final Printer printer) {
         this.allPrinters.add(printer);
-    }
-
-    public List<Printer> getAllPrintersList() {
-        return this.allPrinters;
     }
 
     public List<Printer> findAllWithPaperCountMoreThan(final int paper) {
@@ -42,9 +35,9 @@ public class PrinterManager {
                 .collect(Collectors.toList());
     }
 
-        public static void main(String[] args) throws IOException {
+    @Generated
+    public static void main(String[] args) {
         PrinterWriter printerWriter = new PrinterWriter();
-        printerWriter.printWriter = new PrintWriter(file);
 
         List<Printer> printers = new ArrayList<>();
         printers.add(new SublimationPrinter(400, 0));

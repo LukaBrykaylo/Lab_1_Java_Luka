@@ -1,10 +1,10 @@
-model, type, isColor, isDuplex, paperTrayCapacity, paperCount,levelOfCmyk, isCmyk
-Modeled,Inkjet,true,false,100,0,250,true
-Modeled,Inkjet,true,false,100,0,200,false
-model, type, isColor, isDuplex, paperTrayCapacity, paperCount,capacityOfToner, printedPages
-Modeled,Laser,true,false,100,0,4,0
-Modeled,Laser,true,false,100,0,110,5
-model, type, isColor, isDuplex, paperTrayCapacity, paperCount,numberOfPins, isSpeed, levelOfCmyk
-Modeled,Matrix,true,false,100,0,24,true,100
-model, type, isColor, isDuplex, paperTrayCapacity, paperCount,levelOfCmyk, temperature
-Modeled,Sublimation,true,false,100,0,400,0
+model, isColor, isDuplex, paperTrayCapacity, paperCount,levelOfCmyk, isCmyk
+Modeled,true,false,100,0,250,true
+Modeled,true,false,100,0,200,false
+model, isColor, isDuplex, paperTrayCapacity, paperCount,capacityOfToner, printedPages
+Modeled,true,false,100,0,4,0
+Modeled,true,false,100,0,110,5
+model, isColor, isDuplex, paperTrayCapacity, paperCount,numberOfPins, isSpeed, levelOfCmyk
+Modeled,true,false,100,0,24,true,100
+model, isColor, isDuplex, paperTrayCapacity, paperCount,levelOfCmyk, temperature
+Modeled,true,false,100,0,400,0

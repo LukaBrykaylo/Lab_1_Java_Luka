@@ -1,5 +1,6 @@
 package ua.lviv.iot.algo.part1.lab4.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,6 +8,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class SublimationPrinter extends Printer {
@@ -14,12 +16,6 @@ public class SublimationPrinter extends Printer {
     public static final String HEADERS = "levelOfCmyk, temperature";
     private int levelOfCmyk = 60;
     private int temperature = 0;
-
-    public SublimationPrinter(int levelOfCmyk, int temperature) {
-        this.levelOfCmyk = levelOfCmyk;
-        this.temperature = temperature;
-        type = "Sublimation";
-    }
 
     @Override
     public String print(final int pages) {

@@ -7,12 +7,11 @@ import lombok.Setter;
 @Getter
 public abstract class Printer {
     protected String model = "Modeled";
-    protected String type;
     protected boolean isColor = true;
     protected boolean isDuplex = false;
     protected int paperTrayCapacity = 100;
     protected int paperCount = 0;
-    public static final String HEADERS = "model, type, isColor, isDuplex, paperTrayCapacity, paperCount";
+    public static final String HEADERS = "model, isColor, isDuplex, paperTrayCapacity, paperCount";
 
     public String print(final int pages) {
         if (paperCount >= pages) {
@@ -42,7 +41,7 @@ public abstract class Printer {
     }
 
     public String toCsv() {
-        return model + "," + type + "," + isColor + "," + isDuplex + "," + paperTrayCapacity + "," + paperCount;
+        return model + "," + isColor + "," + isDuplex + "," + paperTrayCapacity + "," + paperCount;
     }
 }
 

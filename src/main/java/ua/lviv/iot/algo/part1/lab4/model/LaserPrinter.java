@@ -1,5 +1,6 @@
 package ua.lviv.iot.algo.part1.lab4.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,6 +8,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class LaserPrinter extends Printer {
@@ -14,12 +16,6 @@ public class LaserPrinter extends Printer {
     public static final String HEADERS = "capacityOfToner, printedPages";
     private int capacityOfToner = 150;
     private int printedPages = 0;
-
-    public LaserPrinter(int capacityOfToner, int printedPages) {
-        this.capacityOfToner = capacityOfToner;
-        this.printedPages = printedPages;
-        type = "Laser";
-    }
 
     @Override
     public String print(final int pages) {

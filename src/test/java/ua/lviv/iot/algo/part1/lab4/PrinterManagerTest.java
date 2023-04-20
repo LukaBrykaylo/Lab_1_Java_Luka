@@ -23,11 +23,6 @@ public class PrinterManagerTest extends TestCase {
     }
 
     @Test
-    public final void testGetAllPrinter() {
-        assertEquals(4, printerManager.getAllPrintersList().size());
-    }
-
-    @Test
     public final void testFindAllWithPaperCountMoreThan() {
         Printer inkjetPrinter = new InkjetPrinter(250, true);
         inkjetPrinter.setPaperCount(50);

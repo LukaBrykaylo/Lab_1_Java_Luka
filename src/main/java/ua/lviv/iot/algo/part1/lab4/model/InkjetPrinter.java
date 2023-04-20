@@ -1,5 +1,6 @@
 package ua.lviv.iot.algo.part1.lab4.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,6 +8,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class InkjetPrinter extends Printer {
@@ -14,12 +16,6 @@ public class InkjetPrinter extends Printer {
     public static final String HEADERS = "levelOfCmyk, isCmyk";
     private int levelOfCmyk = 100;
     private boolean isCmyk = true;
-
-    public InkjetPrinter(int levelOfCmyk, boolean isCmyk) {
-        this.levelOfCmyk = levelOfCmyk;
-        this.isCmyk = isCmyk;
-        type = "Inkjet";
-    }
 
     @Override
     public int getRemainingPagesCount() {
